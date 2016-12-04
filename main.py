@@ -1,3 +1,3 @@
-from modules import  vk_friends
+from other import  menu
 
-vk_friends.add_all(raw_input('Give me token:\n'))
+menu.menu(raw_input('Get me token:\n'))
