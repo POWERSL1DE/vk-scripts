@@ -1,6 +1,6 @@
 from modules import vk_friends
 import argparse
-
+import string
 
 def menu():
     parser = argparse.ArgumentParser(usage=' --[group] -s script --token token.\nFor example: '
@@ -11,6 +11,7 @@ def menu():
     parser.add_argument('-s', '--script', help='Write script id. --[group] --list for getting list of scripts')
     parser.add_argument('-l', '--list', action='store_true', help='Get scripts list for this group')
     parser.add_argument('-t', '--token')
+    parser.add_argument('--ids', type=int, nargs='+')
 
     parsed_args = parser.parse_args()
     if parsed_args.action is None:
