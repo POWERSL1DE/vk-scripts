@@ -3,6 +3,7 @@ import requests
 import json
 import time
 import webbrowser
+import os
 
 
 def choose_script(parsed_args):
@@ -107,8 +108,12 @@ def captcha_confirm(token, jsn, method, usr, message):
         captcha = True
         while captcha:
             if raw_input('Captcha needed. Open browser ? (y\\n)  ') == 'y':
-                # Open captcha img
+                # Open captcha img without webbrowser notifications to console
+                savout = os.dup(1)
+                os.close(1)
+                os.open(os.devnull, os.O_RDWR)
                 webbrowser.open(jsn['error']['captcha_img'])
+                os.dup2(savout, 1)
                 # Get captcha
                 captcha_key = raw_input('Captcha:')
                 # Requests with captcha

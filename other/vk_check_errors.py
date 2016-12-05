@@ -9,7 +9,7 @@ def check(jsn):
 
 def status_code_ok(jsn):
     try:
-        if (jsn['response'] == '1' or '2' or '4') or (jsn['response']['success'] == 1 or 2 or 4):
+        if (str(jsn['response'] == '1' or '2' or '4')) or (str(jsn['response']['success']) == '1' or '2' or '4'):
             return 'ok'
         else:
             print ('Unknown error, json: ' + jsn)
