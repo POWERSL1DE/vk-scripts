@@ -27,6 +27,7 @@
 <ul>
 <li>1 - Add all friends</li>
 <li>2 - Unfollow from all people</li>
+<li>3 - Add users by ids</br>Use '--ids' to set users id.</br> For examle: --friends -s 1 --token your_token --ids 1 4 10 2345</li>
 </ul>
 </li>
 </ul>
